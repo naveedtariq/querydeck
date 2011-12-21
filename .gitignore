@@ -15,6 +15,9 @@
 # Ignore dev_settings.yml
 /config/dev_settings.yml
 
+# Ignore generated assets.
+/public/assets
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 

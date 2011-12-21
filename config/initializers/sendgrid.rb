@@ -8,3 +8,5 @@ if Rails.env.production?
     domain: ENV['SENDGRID_DOMAIN']
   }
 end
+
+Querydeck::Application.config.action_mailer.default_url_options = { host: Settings.domain_name }
