@@ -4,8 +4,6 @@ class IndexController < ApplicationController
       render template: 'pages/index', layout: 'pages'
       return
     end
-    
-    render template: 'pages/index', layout: 'pages'
   end
   
   def channel

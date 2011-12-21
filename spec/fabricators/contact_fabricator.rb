@@ -1,0 +1,2 @@
+Fabricator(:contact) do
+end

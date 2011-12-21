@@ -6,4 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require backbone-rails
 //= require ./index
+//= require_tree ./dashboard

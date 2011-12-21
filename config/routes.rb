@@ -5,6 +5,21 @@ Querydeck::Application.routes.draw do
   root to: 'index#index'
   get 'channel', to: 'index#channel'
   
+  resources :projects do
+    resources :contacts
+    resources :messages
+  end
+  
+  namespace :facebook do
+    resource :tab, only: [], controller: 'tab' do
+      post :show
+    end
+    
+    resource :canvas, only: [], controller: 'canvas' do
+      post :show
+    end
+  end
+  
   authenticate :admin do
     namespace :admin do
       root to: 'index#index'

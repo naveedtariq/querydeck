@@ -24,5 +24,14 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    
+    can :manage, Project, owner_id: user.id
+    can :read, Project
+    
+    can :manage, Message
+    can :read, Message
+    
+    can :manage, Contact
+    can :read, Contact
   end
 end
