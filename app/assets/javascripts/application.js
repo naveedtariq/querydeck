@@ -7,5 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require backbone-rails
+//= require i18n
+//= require translations
 //= require ./index
 //= require_tree ./dashboard

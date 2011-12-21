@@ -1,0 +1,1 @@
+Querydeck::Application.config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
