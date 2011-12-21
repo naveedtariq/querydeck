@@ -1,4 +1,21 @@
 Querydeck::Application.routes.draw do
+  devise_for :users
+  devise_for :admins
+  
+  root to: 'index#index'
+  get 'channel', to: 'index#channel'
+  
+  authenticate :admin do
+    namespace :admin do
+      root to: 'index#index'
+      
+      mount Resque::Server.new, at: 'resque', as: :resque
+      mount Split::Dashboard.new, at: 'split', as: :split
+    end
+  end
+  
+  get '/*id', to: 'pages#show', as: :page
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

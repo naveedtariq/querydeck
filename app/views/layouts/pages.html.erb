@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QueryDeck</title>
+  <%= stylesheet_link_tag "pages" %>
+  <%= raw airbrake_javascript_notifier %>
+  <%= javascript_include_tag "pages" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <%= yield %>
+</body>
+</html>

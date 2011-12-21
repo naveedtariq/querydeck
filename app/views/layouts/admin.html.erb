@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QueryDeck | Administration Area</title>
+  <meta name="robots" content="noindex" />
+  <%= stylesheet_link_tag "admin" %>
+  <%= raw airbrake_javascript_notifier %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <h3><%= link_to "QueryDeck", admin_root_path %></h3>
+        
+        <ul class="nav">
+          <li><%= link_to "Dashboard", admin_root_path %></li>
+          
+          <li class="dropdown" data-dropdown="dropdown">
+            <%= link_to "Reports", "#", class: 'dropdown-toggle' %>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Split Tests", admin_split_path %></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <ul class="nav secondary-nav">
+          <li class="dropdown" data-dropdown="dropdown">
+            <%= link_to current_admin, "#", class: 'dropdown-toggle' %>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Sign out", destroy_admin_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="main" class="container">
+    <% if notice %>
+      <div class="alert-message success"><%= notice %></div>
+    <% end %>
+    
+    <% if alert %>
+      <div class="alert-message error"><%= alert %></div>
+    <% end %>
+    
+    <%= yield %>
+  </div>
+</body>
+</html>

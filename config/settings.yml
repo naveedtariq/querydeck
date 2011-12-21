@@ -1,0 +1,12 @@
+defaults: &defaults
+  domain_name: <%= ENV['DOMAIN_NAME'] || 'localhost' %>
+  preferred_domain_name: <%= ENV['PREFERRED_DOMAIN_NAME'] %>
+    
+development:
+  <<: *defaults
+  
+test:
+  <<: *defaults
+  
+production:
+  <<: *defaults

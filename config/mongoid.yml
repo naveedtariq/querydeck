@@ -1,0 +1,11 @@
+development:
+  host: localhost
+  database: querydeck_development
+
+test:
+  host: localhost
+  database: querydeck_test
+
+# set these environment variables on your prod server
+production:
+  uri: <%= ENV['MONGOLAB_URI'] || ENV['MONGOHQ_URL'] || ENV['MONGODB_URI'] || ENV['MONGODB_URL'] %>
