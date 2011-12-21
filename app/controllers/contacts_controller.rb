@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
   end
   
   def create
-    @project.save
+    @contact.save
     respond_with(@project, @contact)
   end
   
@@ -27,12 +27,12 @@ class ContactsController < ApplicationController
   end
   
   def update
-    @project.update_attributes(params[:project])
+    @contact.update_attributes(params[:contact])
     respond_with(@project, @contact)
   end
   
   def destroy
-    @project.destroy
+    @contact.destroy
     respond_with(@project, @contact)
   end
 end

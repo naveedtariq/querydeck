@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @project.save
+    @message.save
     respond_with(@project, @message)
   end
   
@@ -27,12 +27,12 @@ class MessagesController < ApplicationController
   end
   
   def update
-    @project.update_attributes(params[:project])
+    @message.update_attributes(params[:message])
     respond_with(@project, @message)
   end
   
   def destroy
-    @project.destroy
+    @message.destroy
     respond_with(@project, @message)
   end
 end

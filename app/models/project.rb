@@ -4,6 +4,7 @@ class Project
   
   belongs_to :owner, class_name: 'User', inverse_of: :owned_projects
   
+  embeds_many :collaborators
   has_many :contacts
   has_many :messages
   

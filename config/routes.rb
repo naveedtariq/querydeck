@@ -6,6 +6,7 @@ Querydeck::Application.routes.draw do
   get 'channel', to: 'index#channel'
   
   resources :projects do
+    resources :collaborators
     resources :contacts
     resources :messages
   end

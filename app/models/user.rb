@@ -14,6 +14,6 @@ class User
   end
   
   def projects
-    Project.any_of({owner_id: id})
+    Project.any_of({owner_id: id}, {:'collaborators.user_id' => id})
   end
 end
