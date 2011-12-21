@@ -1,1 +1,0 @@
-Querydeck::Application.config.middleware.use Rack::Deflater
