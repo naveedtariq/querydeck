@@ -5,6 +5,8 @@ Querydeck::Application.routes.draw do
   root to: 'index#index'
   get 'channel', to: 'index#channel'
   
+  resource :dashboard, only: [:show]
+  
   resources :projects do
     resources :collaborators
     resources :contacts
