@@ -5,8 +5,6 @@ Querydeck::Application.routes.draw do
   root to: 'index#index'
   get 'channel', to: 'index#channel'
   
-  resource :dashboard, only: [:show]
-  
   resources :projects do
     resources :collaborators
     resources :contacts
@@ -31,8 +29,6 @@ Querydeck::Application.routes.draw do
       mount Split::Dashboard.new, at: 'split', as: :split
     end
   end
-  
-  get '/*id', to: 'pages#show', as: :page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

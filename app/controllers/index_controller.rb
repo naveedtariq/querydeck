@@ -1,9 +1,7 @@
 class IndexController < ApplicationController
+  before_filter :authenticate_user!, except: [:channel]
+  
   def index
-    unless user_signed_in?
-      render template: 'pages/index', layout: 'pages'
-      return
-    end
   end
   
   def channel
